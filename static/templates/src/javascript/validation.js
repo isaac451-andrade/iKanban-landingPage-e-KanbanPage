@@ -71,14 +71,15 @@ function validateLogin(e){
                 e.preventDefault();
                 alert("Senha Incorreta!")
                 senha.value = '';
+                return;
             }else {
+                return;
             }
-        }else{
-            e.preventDefault();
-            alert('Usuário não existe!');
         }
+        e.preventDefault();
+        alert("Nome de usuário não existe!")
+            
     }
-
 }
 
 if(window.location.pathname === '/login/'){
