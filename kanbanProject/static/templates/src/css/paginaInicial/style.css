@@ -67,11 +67,14 @@ main {
     .btn-login {
         margin-left: 30px;
     }
-    #sobre .caixa-conceito h2{
+    #sobre .caixa-conceito h2,
+    #mais .caixa-conceito h2{
         text-align: center;
     }
 
-
+    .sec-info {
+        margin-top: 25px;
+    }
 }
 
 @media (max-width: 592px){
@@ -182,7 +185,7 @@ section {
 
 .sec-info-separador{
     justify-content: center;
-    margin-top: 90px;
+    margin-top: 40px;
     animation: transicaoSuaveYSeparador 1s ease-out;
 }
 
@@ -228,6 +231,7 @@ section {
     border-radius: 1rem;
     text-decoration: none;
     width: fit-content;
+    text-wrap: nowrap;
     transition: transform 0.5s ease;
 }
 
