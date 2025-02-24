@@ -5,6 +5,13 @@ const span_required = document.querySelector('.input-required');
 const imagesCard = document.querySelectorAll('.card-img')
 modal.classList.add('animationModalShow');
 
+document.querySelector('.modal form').addEventListener('keydown', (e)=>{
+    if(e.key === "Enter"){
+        e.preventDefault()
+        document.querySelector('.section-save button').click();
+    }
+})
+
 
 document.querySelectorAll('.kanban-cards').forEach(column => {
     column.addEventListener('dragover', (e) => {
