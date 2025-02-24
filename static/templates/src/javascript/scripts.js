@@ -12,7 +12,6 @@ document.querySelector('.modal form').addEventListener('keydown', (e)=>{
     }
 })
 
-
 document.querySelectorAll('.kanban-cards').forEach(column => {
     column.addEventListener('dragover', (e) => {
         e.preventDefault();
