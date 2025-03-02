@@ -1,0 +1,51 @@
+{% extends 'baseGeral.html' %}
+    {% block content %}
+        <div class="content">
+            <div class="content-form">
+                <div class="title">
+                    <h1>Crie sua conta</h1>
+                </div>
+                <div class="p-explicacao">
+                    <p>Recomenda-se usar um nickname que seja fácil de se lembrar para sua conta do <span>i</span>Kanban.</p>
+                </div>
+                <form action="" method="post"> {% csrf_token %}
+                    <div class="input">
+                        <div class="caixa-label">
+                            <label for="usuario">Seu nickname</label>
+                        </div>
+                        <input oninput="validateInput(this, '#errorNome')" type="text" id="usuario" name="usuario" placeholder="Digite seu nome de Usuario" required>
+                        <span class="input-required" id="errorNome"  style="display: none;">Preencha o campo com seu Usuário!</span>
+                    </div>
+                    <div class="input">
+                        <div class="caixa-label">
+                            <label for="email">Seu E-mail</label>
+                        </div>
+                        <input oninput="validateInput(this, '#errorEmail')" type="email" id="email" name="email" placeholder="Digite seu email" required>
+                        <span class="input-required" id="errorEmail" style="display: none;">Preencha o campo com seu E-mail!</span>
+                    </div>
+                    <div class="input">
+                        <div class="caixa-label">
+                            <label for="input-senha">Sua senha</label>
+                        </div>
+                        <input oninput="validateInput(this, '#errorSenha')" onchange="validateConfirmaSenha()" type="password" id="input-senha" name="input-senha" placeholder="Digite a senha" required>
+                        <span class="input-required" id="errorSenha" style="display: none;">Preencha o campo com sua Senha!</span>
+                    </div>
+                    <div class="input caixa-confirma">
+                        <div class="caixa-label">
+                            <label for="confirma-senha">Confirme sua senha</label>
+                        </div>
+                        <input oninput="validateConfirmaSenha()" type="password" id="confirma-senha" name="confirma-senha" placeholder="Confirme a senha" required>
+                        <span class="input-required" id="errorSenhaIgual" style="display: none;">As senhas têm que ser iguais!</span>
+                    </div>
+                    <div class="btn-enviarCadastro">
+                        <button type="submit">Cadastrar conta</button>
+                    </div>
+                </form>
+                <div class="caixa-link">
+                    <a href="{% url 'loginPage' %}">Já tem uma conta? Acesse-a agora.</a>
+                </div>
+            </div>
+        </div>
+
+    {% endblock %}
+

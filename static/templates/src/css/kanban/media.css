@@ -1,0 +1,5 @@
+@media (max-width: 613px){
+    .kanban {
+        justify-content: flex-start;
+    }
+}

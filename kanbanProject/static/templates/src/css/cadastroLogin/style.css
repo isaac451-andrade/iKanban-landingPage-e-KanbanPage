@@ -1,0 +1,125 @@
+.content{
+    width: 80%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.content-form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 1.5rem;
+    width: 370px;
+
+    box-shadow: 1px 3px 12px rgba(0, 0, 0, 0.212);
+    gap: 15px;
+}
+
+.title{
+    line-height: 20px;}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.input input{
+    max-width: 85%;
+    min-width: 260px;
+    padding: 6px 10px;
+    outline: none;
+    border-radius: .5rem;
+    border: .5px solid grey;
+    font-size: 16px;
+}
+
+.input input::placeholder{
+    font-size: 16px;
+}
+
+.input input:hover, .input input:focus-within{
+    box-shadow: 1px 2px 6px rgb(77, 77, 145);
+}
+
+.caixa-label{
+    width: 250px;
+    text-align: left;
+}
+.caixa-label label{
+    font-weight: 500;
+}
+
+.caixa-link {
+    text-align: center;
+}
+.caixa-link a:hover{
+    text-decoration: underline;
+
+}
+
+.btn-enviarCadastro, .btn-enviarLogin{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn-enviarCadastro button, .btn-enviarLogin button{
+    background-color:rgb(43, 43, 250);
+    color: #fff;
+    border: none;
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 100%;
+    transition: all .2s ;
+}
+.btn-enviarCadastro button:hover, .btn-enviarLogin button:hover{
+    background-color: rgb(53, 238, 238);
+    color: black;
+}
+
+/* Utils - errors */
+
+.caixa-error {
+    width: 50%;
+    height: 40px;
+    margin-top: 15px;
+    background-color: rgb(241, 102, 130);
+    padding: 3px;
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Utils */
+
+.input-error {
+    border: 1.5px solid rgb(253, 67, 67) !important;
+}
+
+.input-error::placeholder{
+    color:rgb(253, 67, 67);
+}
+
+.input-required {
+    color: rgb(253, 67, 67);
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 6px;
+    position: absolute;
+    top: 65px;
+}
+
+#confirma-senha {
+    position: relative;
+}
+

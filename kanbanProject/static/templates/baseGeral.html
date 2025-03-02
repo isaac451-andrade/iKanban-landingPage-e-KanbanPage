@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban</title>
+    <link rel="stylesheet" href="{% static 'templates/src/css/paginaInicial/style.css' %}">
+    <link rel="stylesheet" href="{% static 'templates/src/css/cadastroLogin/style.css' %}">
+    <link rel="icon" href="{% static 'templates/src/img/ico.png' %}">
+</head>
+<body onload="checkCaixaError()">
+    <header>
+        <h4>Que 2025 seja um ano produtivo e de muita alegria para todos!✴️</h4>
+    </header>
+    {% block content%}
+    {% endblock %}
+    <script src="{% static 'templates/src/javascript/utils.js' %}"></script>
+    <script src="{% static 'templates/src/javascript/validation.js' %}"></script>
+</body>
+</html>

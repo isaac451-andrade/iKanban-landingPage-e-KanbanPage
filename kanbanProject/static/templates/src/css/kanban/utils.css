@@ -1,0 +1,71 @@
+/* Errors */
+.input-error {
+    border: 1.5px solid rgb(253, 67, 67) !important;
+}
+
+.input-error::placeholder{
+    color:rgb(253, 67, 67);
+}
+
+.input-required {
+    color: rgb(253, 67, 67);
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 6px;
+}
+
+/* Animations */
+
+.animationTitleError{
+    animation: setAlarmingError 3s ease-in;
+}
+
+@keyframes setAlarmingError {
+    0%{
+        color: black;
+    }
+    15%{
+        color: red;
+    }
+
+    30%{
+        color: red;
+    }
+
+    45%{
+        color: black;
+    }
+
+    60%{
+        color: red;
+    }
+    75%{
+        color: red;
+    }
+    100%{
+        color: black;
+    }
+    
+}
+
+@keyframes carregarDeCimaPraBaixo{
+    from{
+        top: 0;
+    }
+    to{
+        top: 50%;
+    }
+}
+
+.animationModalShow{
+    animation: carregarDeCimaPraBaixo .2s linear;
+}
+
+/* Dragging classes */
+.dragging {
+    opacity: 0.5;
+}
+
+.drag-over {
+    background-color:rgb(217, 239, 239);
+}

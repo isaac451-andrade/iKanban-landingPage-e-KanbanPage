@@ -1,0 +1,45 @@
+{% extends 'baseGeral.html' %}
+    {% block content %}
+        {% if error %}
+            <div class="caixa-error">
+                <p>{{error}}</p>
+            </div>
+        {% endif %}
+        {% for msg in messages %}
+            <div class="caixa-error">
+                <p>{{msg}}</p>
+            </div>
+        {% endfor %}
+        <div class="content">
+            <div class="content-form">
+                <div class="title">
+                    <h1>Login</h1>
+                </div>
+                <div class="p-explicacao">
+                    <p>Aproveite e compartilhe o nosso sistema do <span>i</span>Kanban para seus amigos.</p>
+                </div>
+                <form action="{% url 'loginPage' %}" method="POST"> {% csrf_token %}
+                    <div class="input">
+                        <div class="caixa-label">
+                            <label for="usuario">Seu nickname</label>
+                        </div>
+                        <input oninput="validateInput(this, '.span-inputName')" type="text" id="usuario" name="usuario" placeholder="Digite seu nome de Usuario" required>
+                        <span class="input-required span-inputName" style="display: none;">Preencha o campo Nome!</span>
+                    </div>
+                    <div class="input">
+                        <div class="caixa-label">
+                            <label for="input-senha">Sua senha</label>
+                        </div>
+                        <input oninput="validateInput(this, '.span-inputSenha')" type="password" id="input-senha" name="input-senha" placeholder="Digite a senha" required>
+                        <span class="input-required span-inputSenha" style="display: none;">Preencha o campo Senha!</span>
+                    </div>
+                    <div class="btn-enviarLogin">
+                        <button>Acessar conta</button>
+                    </div>
+                </form>
+                <div class="caixa-link">
+                    <a href="{% url 'cadastroPage' %}">Não tem uma conta? Crie-a agora.</a>
+                </div>
+            </div>
+        </div>
+    {% endblock %}

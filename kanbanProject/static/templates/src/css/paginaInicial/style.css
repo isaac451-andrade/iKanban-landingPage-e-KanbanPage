@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+ 
+*{
+    font-family: 'Poppins';
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aliceblue;
+}
+
+header {
+    background-color: burlywood;
+    padding: 12px;
+    width: 100%;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    align-items: center;
+    padding: 1.2rem;
+    border-radius: 1.5rem;
+}
+
+.caixa-logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    animation: transicaoSuaveY 1s ease-out;
+    position: sticky;
+    top: 0;
+}
+
+.logo{
+    color: white;
+    padding: 12px;
+    background-color: black;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    border-radius: 1.5rem;
+    width: fit-content;
+}
+
+@media (max-width: 456px){
+    a[href^="#"]{
+        display: none;
+    }
+
+    .btn-login {
+        margin-left: 30px;
+    }
+    #sobre .caixa-conceito h2,
+    #mais .caixa-conceito h2{
+        text-align: center;
+    }
+
+    .sec-info {
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 592px){
+    .caixa-btn-cadastro{
+        flex-direction: column;
+    }
+
+    .btn-cadastro {
+        margin: 0 !important;
+    }
+
+    .btn-cadastro div{
+        text-align: center;
+        width: 200px;
+    }
+}
+
+@media (max-width: 1137px){
+    .sec-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .caixa-imagem2 {
+        display: none;
+        margin: 0;
+    }
+    .caixa-conceito {
+        margin-bottom: 15px;
+    }
+    main {
+        width: 100%;
+        padding: 0;
+    }
+
+
+    .caixa-imagem img {
+        width: 100%;
+        margin: 0;
+    }
+
+}
+
+@media (max-width: 1300px){
+    .caixa-imagem{
+        margin-left: 22px;
+    }
+    .caixa-imagem2 {
+        margin-right: 22px;
+    }
+    .btn-cadastro {
+        margin-right: 40px;
+    }
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+a[href^="#"]{
+    padding: 8px;
+    color: #fff;
+    transition: color .5s ease-out;
+}
+
+a[href^="#"]:hover{
+    color: rgb(53, 238, 238);
+}
+
+span{
+    color: crimson;
+}
+
+.btn-login{
+    background-color:rgb(43, 43, 250);
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 12px;
+    transition: transform 0.5s ease;
+}
+
+.btn-login:hover{
+    background-color: rgb(53, 238, 238);
+    color: black;
+    transform: scale(1.1);
+}
+
+section {
+    margin-top: 40px;
+    animation: transicaoSuaveY 1.5s ease-out;
+    
+}
+
+#inicio{
+    scroll-margin-top: 210px;
+}
+#sobre{
+    scroll-margin-top: 190px;
+}
+.sec-info {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.sec-info-separador{
+    justify-content: center;
+    margin-top: 40px;
+    animation: transicaoSuaveYSeparador 1s ease-out;
+}
+
+.caixa-conceito{
+    max-width: 430px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.caixa-conceito h2 {
+    font-size: 40px;
+}
+
+.caixa-conceito-2 h2{
+    font-size: 50px;
+}
+.caixa-conceito-2 {
+    max-width: 480px;
+}
+.caixa-conceito h1{
+    font-size: 60px;
+    line-height: 50px;
+}
+
+.p-explicacao{
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.caixa-btn-cadastro{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+
+}
+
+.btn-cadastro {
+    background-color: darkorange;
+    color: #fff;
+    padding: 19px 23px;
+    border-radius: 1rem;
+    text-decoration: none;
+    width: fit-content;
+    text-wrap: nowrap;
+    transition: transform 0.5s ease;
+}
+
+.btn-cadastro:hover{
+    background-color: rgb(250, 91, 33);
+    color: black;
+    transform: scale(1.1);
+}
+
+.caixa-imagem img {
+    max-width: 520px;
+    border-radius: 1.5rem;
+}
+
+.caixa-imagem2 img{
+    width: 517px;
+    height: 420px;
+    border-radius: 1.5rem;
+}
+
+small{
+    font-weight: 500;
+}
+
+@keyframes transicaoSuaveY {
+    from{
+        opacity: 0;
+        transform: translateY(30%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes transicaoSuaveYSeparador {
+    from{
+        opacity: 0;
+        transform: translateY(10%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

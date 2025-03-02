@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+ 
+*{
+    font-family: 'Poppins';
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(90deg, rgb(106, 106, 231), rgb(77, 77, 238));
+    background-repeat: no-repeat;
+    padding: 12px;
+}
+
+.kanban {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 90vh;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: .5px;
+}
+
+.btn_add:hover{
+    background-color: rgb(187, 182, 182);
+    border-radius: 22px;
+
+}
+
+.kanban-column::after{
+    width: 100%;
+    content: '';
+    position: absolute;
+    height: 6px;
+    border-radius: 12px;
+    top: 0;
+    left: 0;
+}
+
+.kanban-column[column-id='1']::after{
+    background-color: red;
+}
+
+.kanban-column[column-id='2']::after{
+    background-color: rgb(44, 44, 245);
+}
+
+.kanban-column[column-id='3']::after{
+    background-color: greenyellow;
+}
+
+.kanban-column {
+    background-color: aliceblue;
+    border-radius: 12px;
+    padding: 12px;
+    width: 300px;
+    min-width: 190px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.kanban-title{
+    display: flex;
+    justify-content: space-between;
+}
+.kanban-title img {
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.kanban-title h3{
+    font-size: 16px;
+    color: rgb(104, 20, 184);
+}
+
+.kanban-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 8px;
+    overflow: hidden;
+    overflow-y: auto;
+    height: 100%;
+    border-radius: 12px;
+}
+
+/* Card styling */
+
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgb(183, 240, 240);
+    border-radius: 12px;
+    padding: 6px;
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.212);
+}
+
+.badge{
+    width: fit-content;
+    border-radius: 12px;
+    padding: 2px 5px;
+}
+
+.badge span{
+    font-size: 14px;
+}
+.badge.high {
+    background-color: orange;
+    
+}
+
+.badge.medium{
+    background-color:rgb(103, 103, 240);
+}
+
+.badge.low{
+    background-color: yellow;
+}
+
+.card-title{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.kanban-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.kanban-icons div{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.kanban-icons img{
+    object-fit: cover;
+    cursor: pointer;
+}
+
+
+
+/* Modal styling */
+
+dialog{
+    border: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.modal {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    gap: 15px;
+    border-radius: 16px;
+}
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.modal-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-title p{
+    color: red;
+    cursor: pointer;
+}
+.prioridades label {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    gap: 5px;
+    padding: 3px 6px;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.prioridades label:hover {
+    box-shadow: 0px 5px 5px -2px rgba(0, 0, 0, 0.212);
+}
+.label-prioridade.high {
+    background-color: orange;
+}
+.label-prioridade.medium {
+    background-color: rgb(103, 103, 240);
+}
+
+.label-prioridade.low{
+    background-color: yellow;
+}
+
+.prioridades {
+    display: flex;
+    gap: 5px;
+}
+
+.section-input{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.section-input input{
+    padding: 8px;
+    border-radius: 16px;
+    border: none;
+    background-color:rgb(250, 243, 234);
+    outline: none;
+    font-size: 16px;
+}
+
+.section-prioridades {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.section-save {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 3px solid black;
+    padding: 5px;
+}
+
+.section-save button {
+    padding: 2px 4px;
+    border: 2px solid black;
+    background-color: chartreuse;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.section-save button:hover {
+    background-color: azure;
+}
+
+#caixa-fade{
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: gray;
+    opacity: 0.4;
+    position: fixed;
+}
+
+#caixa-loading {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(83, 80, 80);
+    opacity: 0.5;
+    position: fixed;
+    z-index: 3;
+}
+
+progress {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    height: 40px;
+    transform: translate(-50%, -50%);
+}
+
+.userName {
+    color: rgb(63, 9, 113);
+    position: relative;
+}
+
+
+.desabilitado {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+
+/* Scrollbar styling */
+
+*::-webkit-scrollbar-track{
+    border-radius: 12px;
+    background-color:rgb(237, 229, 217);
+}
+
+*::-webkit-scrollbar-thumb{
+    border-radius: 16px;
+    background-color: rgb(208, 178, 237);
+}
+
+*::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+}

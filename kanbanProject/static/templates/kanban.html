@@ -1,0 +1,90 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban</title>
+    <link rel="icon" href="{% static 'templates/src/img/ico.png' %}">
+    <link rel="stylesheet" href="{% static 'templates/src/css/kanban/style.css' %}">
+    <link rel="stylesheet" href="{% static 'templates/src/css/kanban/media.css' %}">
+    <link rel="stylesheet" href="{% static 'templates/src/css/kanban/utils.css' %}">
+</head>
+<body onload="sendCardsToFront()">
+    <div id="caixa-loading">
+        <progress max="100" value="0"></progress>
+    </div>
+    <!-- Area do Kanban -->
+     <h1 class="userName">
+        {{user.username}}
+     </h1>
+    <main class="kanban">
+        <div class="kanban-column" column-id="1">
+            <div class="kanban-title">
+                <h3>Pendente</h3>
+                <img column-id="1" class="btn_add" src="{% static 'templates/src/img/add.png' %}" style="width: 20px;" alt="">
+            </div>
+            <div class="kanban-cards" column-id="1"></div>
+        </div>
+
+        <div class="kanban-column" column-id="2">
+            <div class="kanban-title">
+                <h3>Fazendo</h3>
+                <img column-id="2" class="btn_add" src="{% static 'templates/src/img/add.png' %}" style="width: 20px;" alt="">
+            </div>
+            <div class="kanban-cards" column-id="2"></div>
+            </div>
+        </div>
+
+        <div class="kanban-column" column-id="3">
+            <div class="kanban-title">
+                <h3>Finalizado</h3>
+                <img column-id="3" class="btn_add" src="{% static 'templates/src/img/add.png' %}" style="width: 20px;" alt="">
+            </div>
+            <div class="kanban-cards" column-id="3"></div>
+        </div>
+    </main>
+    <!-- Modal abaixo -->
+    <div id="caixa-fade"></div>
+    <dialog style="display: none;" class="modal">
+        <div class="modal-title">
+            <h2>Adicionar Card</h2>
+            <p class="btn-close">X</p>
+        </div>
+        <form action="">
+            <div class="section-input">
+                <input oninput="validateTask(this)" type="text" id="card-name" placeholder="Digite a task">
+                <span style="display: none;" class="input-required">Campo vazio não é aceito!</span>
+            </div>
+            <div class="section-prioridades">
+                <h4>Prioridade</h4>
+                <div class="prioridades">
+                    <label for="high" class="label-prioridade high">
+                        <input type="radio" id="high" name="prioridade" value="Alta">
+                        <span>Alta</span>
+                    </label>
+            
+                    <label for="medium" class="label-prioridade medium">
+                        <input type="radio" id="medium" name="prioridade" value="Média">
+                        <span>Média</span>
+                    </label>
+            
+                    <label for="low" class="label-prioridade low">
+                        <input type="radio" id="low" name="prioridade" value="Baixa">
+                        <span>Baixa</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="section-save">
+                <button type="button">Salvar</button>
+            </div>
+        </form>
+    </dialog>
+    <img class="card-img" style="display: none;" src="{% static 'templates/src/img/lixeira.png' %}" alt="">
+    <img class="card-img" style="display: none;" src="{% static 'templates/src/img/editar.png' %}" alt="">
+    <img class="card-img" style="display: none;" src="{% static 'templates/src/img/user.png' %}" alt="">
+    <script src="{% static 'templates/src/javascript/scripts.js' %}"></script>
+</body>
+</html>

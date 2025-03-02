@@ -1,0 +1,81 @@
+{% extends 'baseGeral.html' %}
+{% load static %}
+    {% block content %}
+    <div class="caixa-logo">
+        <div class="logo">
+            <h1><span>i</span>Kanban</h1>
+            <nav>
+                <a href="#inicio">Inicio</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#mais">Mais</a>
+                <a href="{% url 'loginPage' %}" class="btn-login">
+                    <div>Login</div>
+                </a>
+            </nav>
+        </div>
+    </div>
+    <main>
+
+        <section id="inicio" class="sec-info">
+            <div class="caixa-conceito caixa-conceito-2">
+                <h2>Inscreva-se agora</h2>
+                <h1>No <span>i</span>Kanban</h1>
+                <div class="p-explicacao">
+                    <p>Busca mais produtividade e organização para a sua equipe? Cadastre-se aqui e já começe a usar o nosso Kanban.</p>
+                </div>
+                <div class="caixa-btn-cadastro">
+                    <a href="{% url 'cadastroPage' %}" class="btn-cadastro">
+                        <div>Começe a usar</div>
+                    </a>
+                    <div class="p-explicacao">
+                        <p>Iniciatiava totalmente gratuita.</p>
+                        <p>Sem enrolação.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="caixa-imagem">
+                <img src="{% static 'templates/src/img/imagemEntradaKanban.jpg' %}" alt="Imagem do iKanban">  <!-- Imagem do kanban funcionando -->
+            </div>
+        </section>
+        
+        <section class="sec-info sec-info-separador">
+            <div class="p-explicacao">
+                <p>Você sabia? Várias empresas ao redor do mundo usam o método Kanban, desde a pioneira Toyota, até a Nike e a própria HP.</p>
+            </div>
+        </section>
+        
+
+        <section id="sobre" class="sec-info">
+            <div class="caixa-conceito">
+                <h2>O que é o iKanban?</h2>
+                <div class="p-explicacao">
+                    <p>O iKanban nasceu como uma ideia de projeto por causa das inúmeres coisas que se dá para aprender com a lógica de um gerenciador de tarefas.</p>
+                </div>
+                
+                <small>Começe a organizar suas tarefas de forma inteligente.</small>
+            </div>
+            <div class="caixa-imagem">
+                <img src="{% static 'templates/src/img/exemploKanban.png' %}" alt="Imagem do iKanban">  <!-- Imagem do kanban funcionando -->
+            </div>
+        </section>
+
+        <section class="sec-info" id="mais">
+            <div class="caixa-imagem2">
+                <img src="{% static 'templates/src/img/imagemKanban2.jpg' %}" alt="Imagem do iKanban">  <!-- Imagem do kanban funcionando -->
+            </div>
+            <div class="caixa-conceito">
+                <h2>Benefícios de usar o nosso iKanban</h2>
+                <div class="p-explicacao">
+                    <ul>
+                        <li>Melhor comunicação</li>
+                        <li>Melhoria da produtividade</li>
+                        <li>Visualização do fluxo de trabalho</li>
+                        <li>Estimula a autonomia dos participantes</li>
+                        <li>Maior controle dos processos do projeto</li>
+                    </ul>
+                </div>
+                <small>A organização é a chave de sucesso de toda equipe.</small>
+            </div>
+        </section>
+    </main>
+    {% endblock %}
